@@ -38,6 +38,8 @@ Route::middleware('auth:sanctum') ->group(function (){
             'third'=>'HIG',
         ];
     });
+
+    Route::apiResource('users',\App\Http\Controllers\UserController::class);
 });
 
 Route::post('register', [\App\Http\Controllers\AuthController::class,'register']);
