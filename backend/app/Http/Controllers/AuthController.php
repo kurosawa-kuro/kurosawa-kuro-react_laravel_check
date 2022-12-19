@@ -13,10 +13,6 @@ class AuthController extends Controller
 {
     public function register(RegisterRequest $request)
     {
-//        $table->string('name');
-//        $table->string('email')->unique();
-//        $table->timestamp('email_verified_at')->nullable();
-//        $table->string('password');
         $user = User::create(
             [
                 'name' => $request->input('name'),
