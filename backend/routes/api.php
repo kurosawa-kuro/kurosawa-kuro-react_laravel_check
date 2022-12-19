@@ -30,6 +30,14 @@ Route::middleware('auth:sanctum') ->group(function (){
     Route::get('user', [\App\Http\Controllers\AuthController::class,'user']);
 
     Route::post('logout', [\App\Http\Controllers\AuthController::class,'logout']);
+
+    Route::get('protected_hello_list', function () {
+        return [
+            'first'=>'ABC',
+            'second'=>'EFG',
+            'third'=>'HIG',
+        ];
+    });
 });
 
 Route::post('register', [\App\Http\Controllers\AuthController::class,'register']);
