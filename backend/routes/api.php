@@ -20,30 +20,39 @@ Route::get('hello', function () {
 });
 
 Route::get('hello_list', function () {
-    return [
-        'first'=>'abc',
-        'second'=>'efg',
-        'third'=>'hig',
+    $data = [
+        [
+            'id' => 1,
+            'first' => 'abc',
+            'second' => 'efg',
+            'third' => 'hig',],
+        [
+            'id' => 2,
+            'first' => 'lfm',
+            'second' => 'opq',
+            'third' => 'rst',]
     ];
+
+    return response()->json($data);
 });
 
-Route::middleware('auth:sanctum') ->group(function (){
-    Route::get('user', [\App\Http\Controllers\AuthController::class,'user']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
 
-    Route::post('logout', [\App\Http\Controllers\AuthController::class,'logout']);
+    Route::post('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
 
     Route::get('protected_hello_list', function () {
         return [
-            'first'=>'ABC',
-            'second'=>'EFG',
-            'third'=>'HIG',
+            'first' => 'ABC',
+            'second' => 'EFG',
+            'third' => 'HIG',
         ];
     });
 
-    Route::apiResource('users',\App\Http\Controllers\UserController::class);
+    Route::apiResource('users', \App\Http\Controllers\UserController::class);
 
     Route::post('upload', [ImageController::class, 'upload']);
 });
 
-Route::post('register', [\App\Http\Controllers\AuthController::class,'register']);
-Route::post('login', [\App\Http\Controllers\AuthController::class,'login']);
+Route::post('register', [\App\Http\Controllers\AuthController::class, 'register']);
+Route::post('login', [\App\Http\Controllers\AuthController::class, 'login']);
