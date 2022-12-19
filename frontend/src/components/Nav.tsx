@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
-        <div className='d-flex align-items-center justify-content-around'>
-            <ul className='d-flex mb-0 align-items-center'>
+        <div className='d-flex align-items-center justify-content-between'>
+            <ul className='d-flex mb-0 align-items-center ps-0'>
                 <li className='list-unstyled'>
                     <Link className='me-3 text-decoration-none' to="/">Home</Link>
                 </li>
@@ -30,7 +30,7 @@ function Nav() {
                     <Link className='me-3 text-decoration-none' to="/setting">Setting</Link>
                 </li>
             </div>
-        </div>
+        </div >
     )
 }
 

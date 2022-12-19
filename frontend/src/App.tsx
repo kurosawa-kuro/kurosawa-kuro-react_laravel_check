@@ -12,7 +12,7 @@ import Setting from './pages/Setting';
 
 function App() {
   return (
-    <>
+    <div className='container'>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/setting" element={<Setting />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

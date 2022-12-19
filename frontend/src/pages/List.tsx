@@ -10,6 +10,7 @@ function List() {
         async function fetchData() {
             const response = await axios.get(`${url}hello_list`)
             console.log({ response })
+
             setData(response.data);
         }
         fetchData();
@@ -17,14 +18,16 @@ function List() {
 
     return (
         <>
-            <div>List</div>
+
+            <h2>List</h2>
             <ul>
                 {data.map((x: { id: 0, first: "" }) => {
                     return (
-                        <li key={x.id}>{x.first}</li>
+                        <li key={x.id} className='list-unstyled'>{x.first}</li>
                     )
                 })}
             </ul>
+
         </>
     )
 }
