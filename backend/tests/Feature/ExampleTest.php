@@ -38,7 +38,7 @@ class ExampleTest extends TestCase
     {
         $uploadedFile = UploadedFile::fake()->image('design.jpg');
 //        dd($uploadedFile);
-        $response  = $this->post('/api/upload', ['image' => UploadedFile::fake()->image('hoge.jpg')]);
+        $response  = $this->post('/api/upload', ['image' => $uploadedFile]);
 //        dd($response);
         $response->assertStatus(200);
 //
